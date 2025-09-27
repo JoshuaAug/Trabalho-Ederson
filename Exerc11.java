@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Exerc11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean temNum=false, maior8=false, temMaiusc=false, temMinusc=false;
+        boolean temNum=false, temMaiusc=false, temMinusc=false;
         int ClashRoyal=0;
 
         System.out.print("Digite sua senha: ");
@@ -11,9 +11,8 @@ public class Exerc11 {
 
         // if >= 8
         if (senha.length() >= 8) {
-            maior8 = true;
+            ClashRoyal+=2;
         }
-
         // if tem maiscula, if tem minuscula e if tem num
         for (char s : senha.toCharArray()) { // Converte a string em um array de caracteres
             if (Character.isUpperCase(s)) {
@@ -26,9 +25,8 @@ public class Exerc11 {
                 temMinusc = true;
             }
         }
-
+        
         // classificação
-
         // pequnenos
         if (senha.length() >= 3 && senha.length() <= 5) {
             // so num
@@ -42,8 +40,6 @@ public class Exerc11 {
                 ClashRoyal++;
             }
         }
-
-
         // medios
         if (senha.length() >= 6 && senha.length() <= 10) {
             // so num
@@ -57,7 +53,6 @@ public class Exerc11 {
                 ClashRoyal+=2;
             }
         }
-
         // grandes
         if (senha.length() >= 11) {
             // so num
@@ -72,35 +67,13 @@ public class Exerc11 {
             }
         }
 
-        // switch de prints
-        switch(ClashRoyal) {
-            case 1:
-                System.out.print("Sua senha é fraca e você é beta!");
-                break;
-            case 2:
-                System.out.print("Sua senha é fraca e você é beta!");
-                break;
-            case 3:
-                System.out.print("Sua senha é fraca e você é beta!");
-                break;
-            case 4:
-                System.out.print("Sua senha é fraca e você é beta!");
-                break;
-            case 5:
-                System.out.print("Sua senha é moderada, melhore.");
-                break;
-            case 6:
-                System.out.print("Sua senha é moderada, melhore.");
-                break;
-            case 7:
-                System.out.print("Sua senha é moderada, melhore.");
-                break;
-            case 8:
-                System.out.print("Sua senha é forte, você é um alpha!");
-                break;
-            case 9:
-                System.out.print("Sua senha é forte, você é um alpha!");
-                break;
+        // if de prints
+        if (ClashRoyal <= 4) {
+            System.out.print("Sua senha é fraca!");
+        } else if (ClashRoyal <= 7) {
+            System.out.print("Sua senha é moderada.");
+        } else  if (ClashRoyal <= 9) {
+            System.out.print("Sua senha é forte!");
         }
     }
 }
