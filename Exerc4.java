@@ -52,8 +52,8 @@ public class Exerc4 {
 
         // Alerta Pobre
         if (saldo < 0) {
-            System.out.println("Alerta!! Pobre lascado");
+            System.out.println("Alerta!! Saldo negativo!!");
         }
-        System.out.printf("Saldo atual: R$%.2f", saldo);
+        System.out.printf("Saldo atual: %.2f", saldo);
     }
 }
