@@ -40,8 +40,13 @@ public class Exerc181 {
             peso--;
         }
         int resto = soma % 11;
-        int dig1 = (resto < 2) ? 0 : 11 - resto;
-
+        
+        int dig1;
+        if (resto < 2) {
+            dig1 = 0;
+        } else {
+            dig1 = 11 - resto;
+        }
         if (dig1 != (CPF.charAt(9) - '0')) {
             return false;
         }
@@ -54,8 +59,15 @@ public class Exerc181 {
             peso--;
         }
         resto = soma % 11;
-        int dig2 = (resto < 2) ? 0 : 11 - resto;
-
+        int dig2;
+        if (resto < 2) {
+            dig2 = 0;
+        } else {
+            dig2 = 11 - resto;
+        }
+        if (dig1 != (CPF.charAt(9) - '0')) {
+            return false;
+        }
         if (dig2 != (CPF.charAt(10) - '0')) {
             return false;
         }
