@@ -5,7 +5,6 @@ public class Exerc14 {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
-        boolean simulacao = true;
         int dado1, dado2, soma, cont=0;
 
         do {
@@ -16,9 +15,9 @@ public class Exerc14 {
             System.out.printf("D1: %d + D2: %d = %d\n", dado1, dado2, soma);
             cont++;
             if (soma == 7){
-                simulacao = false;
+                break;
             }
-        } while (simulacao==true);
+        } while (true);
 
         System.out.printf("Você levou %d tentativas para a soma dos dados ser 7!", cont);
     }
