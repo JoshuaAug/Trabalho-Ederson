@@ -25,16 +25,24 @@ public class Exerc22 {
         for (int i = 0; i < quantidade; i++) {
             // De acordo com a média da turma
             if (notas.get(i) <= media) {
-                System.out.printf("[%d nota] %.2f, Abaixo da média da turma, Reprovado\n", i+1, notas.get(i));
+                System.out.printf("[%d nota] %.1f - Abaixo da média da turma - ", i+1, notas.get(i));
             } else if (notas.get(i) >= media) {
-                System.out.printf("[%d nota] %.2f, Acima da média da turma, aprovado\n", i+1, notas.get(i));
+                System.out.printf("[%d nota] %.1f - Acima da média da turma - ", i+1, notas.get(i));
             }
+
+            // De acordo com media básica
+            if (notas.get(i) <= 6) {
+                System.out.print("Reprovado.\n");
+            } else if (notas.get(i) > 6) {
+                System.out.print("Aprovado.\n");
+            }
+
             // Nota máxima
             if (notas.get(i) > maxi) {
                 maxi = notas.get(i);
             }
         }
-        System.out.printf("A média das notas é %.2f\n", media);
-        System.out.printf("A maior nota foi %.2f\n", maxi);
+        System.out.printf("A média das notas é %.1f\n", media);
+        System.out.printf("A maior nota foi %.1f\n", maxi);
     }
 }
