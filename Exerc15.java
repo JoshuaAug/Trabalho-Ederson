@@ -7,16 +7,16 @@ public class Exerc15 {
         Scanner sc = new Scanner(System.in);
         List<String> votos = new ArrayList<>();
 
-        System.out.println("votos");
-        System.out.println("Digite o número do candidato:");
-        System.out.println("13 - Ladrão");
-        System.out.println("22 - Capitão Brasil");
-        System.out.println("Digite 'cabo' para parar");
+        System.out.print("- - - - - - Votos - - - - - -\n");
+        System.out.print("Digite o número do candidato:\n");
+        System.out.print("13 - Lula\n");
+        System.out.print("22 - Bolsonaro\n");
+        System.out.print("Digite \"Fim\" para parar\n");
 
         while (true) {
             System.out.print("Voto: ");
             String entrada = sc.nextLine();
-            if (entrada.equalsIgnoreCase("cabo")) {
+            if (entrada.equalsIgnoreCase("fim")) {
                 break;
             }
             votos.add(entrada);
@@ -28,11 +28,11 @@ public class Exerc15 {
             } else if (vot.equals("22")) {
                 votos22++;
             } else {
-                System.out.println("Sapoha não existe fi:" + vot);
+                System.out.printf("Não existe um cadidato: \"%s\"\n", vot);
             }
         }
-        System.out.println("\n= resultado =");
-        System.out.println("Ladrão: " + votos13 + " votos");
-        System.out.println("Capitão Brasil: " + votos22 + " votos");
+        System.out.printf("\n - - Resultado - - \n");
+        System.out.printf("Lula: %d votos\n", votos13);
+        System.out.printf("Bolsonaro: %d votos\n", votos22);
     }
 }
