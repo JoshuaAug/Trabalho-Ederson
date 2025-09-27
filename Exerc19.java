@@ -21,65 +21,20 @@ public class Exerc19 {
         System.out.print("Qual a moeda de destino: ");
         moeda[1] = sc.nextInt();
 
-        // cada conversão
+        // chama cada conversor
         // moeda origem
         switch(moeda[0]){
             // real
             case 1:
-                switch(moeda[1]){
-                    // dolar
-                    case 2:
-                        valor = valor * 0.19;
-                        System.out.printf("O valor fornecido em dolar US$%.2f\n", valor);
-                        break;
-                    // euro
-                    case 3:
-                        valor = valor * 0.16;
-                        System.out.printf("O valor fornecido em euro €%.2f\n", valor);
-                        break;
-                    // caso nao seja nenhum
-                    default:
-                        System.out.print("Moeda destino inválida\n");
-                    break;
-                }
+                conversorReal(moeda[1], valor);
                 break;
             // dolar
             case 2:
-                switch(moeda[1]){
-                    // real
-                    case 1:
-                        valor = valor * 5.34;
-                        System.out.printf("O valor fornecido em real R$%.2f\n", valor);
-                        break;
-                    // euro
-                    case 3:
-                        valor = valor * 0.85;
-                        System.out.printf("O valor fornecido em euro €%.2f\n", valor);
-                        break;
-                    // caso nao seja nenhum
-                    default:
-                        System.out.print("Moeda destino inválida\n");
-                        break;
-                }
+                conversorDolar(moeda[1], valor);
                 break;
             // euro
             case 3:
-                switch(moeda[1]){
-                    // real
-                    case 1:
-                        valor = valor * 6.29;
-                        System.out.printf("O valor fornecido em real R$%.2f\n", valor);
-                        break;
-                    // dolar
-                    case 2:
-                        valor = valor * 1.18;
-                        System.out.printf("O valor fornecido em dolar US$%.2f\n", valor);
-                        break;
-                    // caso nao seja nenhum
-                    default:
-                        System.out.print("Moeda destino inválida");
-                        break;
-                }
+                conversorEuro(moeda[1], valor);
                 break;
             // caso nao seja nenhum
             default:
@@ -87,4 +42,65 @@ public class Exerc19 {
                 break;
         }
     }
+
+    public static void conversorReal(int moeda, double valor){
+        switch(moeda) {
+            // dolar
+            case 2:
+                valor = valor * 0.19;
+                System.out.printf("O valor fornecido em dolar US$%.2f\n", valor);
+                break;
+            // euro
+            case 3:
+                valor = valor * 0.16;
+                System.out.printf("O valor fornecido em euro €%.2f\n", valor);
+                break;
+            // caso nao seja nenhum
+            default:
+                System.out.print("Moeda destino inválida\n");
+                break;
+        }
+        return;
+    }
+
+    public static void conversorDolar(int moeda, double valor){
+        switch(moeda){
+            // real
+            case 1:
+                valor = valor * 5.34;
+                System.out.printf("O valor fornecido em real R$%.2f\n", valor);
+                break;
+            // euro
+            case 3:
+                valor = valor * 0.85;
+                System.out.printf("O valor fornecido em euro €%.2f\n", valor);
+                break;
+            // caso nao seja nenhum
+            default:
+                System.out.print("Moeda destino inválida\n");
+                break;
+        }
+        return;
+    }
+
+    public static void conversorEuro(int moeda, double valor){
+        switch(moeda){
+            // real
+            case 1:
+                valor = valor * 6.29;
+                System.out.printf("O valor fornecido em real R$%.2f\n", valor);
+                break;
+            // dolar
+            case 2:
+                valor = valor * 1.18;
+                System.out.printf("O valor fornecido em dolar US$%.2f\n", valor);
+                break;
+            // caso nao seja nenhum
+            default:
+                System.out.print("Moeda destino inválida");
+                break;
+        }
+        return;
+    }
+
 }
