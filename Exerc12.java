@@ -35,7 +35,7 @@ public class Exerc12 {
             if (estacao == 'P' || estacao == 'V' || estacao == 'O' || estacao == 'I'){
                 break;
             } else {
-                System.out.print("Clima inválido");
+                System.out.print("Estação inválido");
             }
         } while (true);
 
@@ -111,3 +111,4 @@ public class Exerc12 {
 
     }
 }
+
